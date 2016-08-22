@@ -22,14 +22,33 @@ me to the infinite grid.
 
 The grid is described as infinite, which makes for a very interesting problem:
 how does one represent infinity in a computer, which has limited memory?
-The first step is to abandon the idea of storing the state of the grid as a multidimensional array where each element is a cell. Not only is this impossible, but also wasteful of memory: since the state of a cell is binary, there is no need to store both the location of alive and dead cells. Storing the location of each alive or dead cell implicitly includes data about the other type of cell. Knowing where each alive cell is means we also know where the dead ones are, that is anywhere else. I am going to choose to store the coordinates of alive cells for the following reason: 
+The first step is to abandon the idea of storing the state of the grid as a 
+multidimensional array where each element is a cell. Not only is this impossible, 
+but also wasteful of memory: since the state of a cell is binary, there is no 
+need to store both the location of alive and dead cells. Storing the location of 
+each alive or dead cell implicitly includes data about the other type of cell. 
+Knowing where each alive cell is means we also know where the dead ones are, 
+that is anywhere else. I am going to choose to store the coordinates of alive 
+cells for the following reason: 
 
-- The grid is initialised with a finite list of cells that are alive. It follows that at the beginning the list of alive cells if finite, whereas the list of dead ones is infinite.
+- The grid is initialised with a finite list of cells that are alive. It follows 
+that at the beginning the list of alive cells if finite, whereas the list of dead 
+ones is infinite.
 
 A few challenges posed by the infinite grid:
 
-- As the grid evolves tick after tick, it is not possible to determine how large the list of alive cells will become. If larger than the architecture of the language used allows to keep track of, an arbitrary limit to the number of alive cells might be introduced.
-- If the computation time on each tick is critical and has to be under a certain figure, we will need to establish a worst case scenario to test against.
+- As the grid evolves tick after tick, it is not possible to determine how large 
+the list of alive cells will become. If larger than the architecture of the 
+language used allows to keep track of, an arbitrary limit to the number of alive 
+cells might be introduced.
+- If the computation time on each tick is critical and has to be under a certain 
+figure, we will need to establish a worst case scenario to test against.
+
+### Coordinate system
+
+The grid has an origin cell, with coordinates x:0, y:0. The rest of the cells 
+will be referred to in terms of offset in both axes from the origin. Both axes 
+are positively and infinitely infinite.
 
 ### Terminology
 
