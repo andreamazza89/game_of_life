@@ -1,0 +1,2 @@
+class RuleFour
+end
