@@ -11,23 +11,7 @@ class RuleTwo
   private
 
   def self.has_two_or_three_neighbours?(cell, current_generation)
-    cell_neighbours = neighbours(cell)
-    current_generation.select { |cell| cell_neighbours.include?(cell) }.count.between?(2,3)
-  end
-
-#consider extracting a Cell class that understands who its neighbours are
-#also refactor into a more elegant solution?
-  def self.neighbours(cell)
-    x = cell[0]
-    y = cell[1]
-    [[x + 1, y],
-     [x + 1, y - 1],
-     [x, y - 1],
-     [x - 1, y - 1],
-     [x - 1, y],
-     [x -1, y + 1],
-     [x, y + 1],
-     [x + 1, y + 1]]
+    current_generation.select { |other_cell| other_cell.neighbours.include?(cell) }.count.between?(2,3)
   end
 
 end

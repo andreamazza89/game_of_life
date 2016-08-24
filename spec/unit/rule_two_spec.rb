@@ -2,14 +2,14 @@ describe RuleTwo, ':evaluate_next_generation_cells' do
 
   let(:mock_grid)                   { instance_double('Grid') }
   let(:rule_two)                    { described_class }
-  let(:test_generation_one)         { [[0, 0], [1, 0] ] }
+  let(:test_generation_one)         { [Cell.new(0,0), Cell.new(1,0)] }
   let(:generation_one_after_rule)   { [] }
-  let(:test_generation_two)         { [[0, 0], [1, 1], [-1, -1]] }
-  let(:generation_two_after_rule)   { [[0,0]] }
-  let(:test_generation_three)       { [[0, 0], [1, 1], [-1, -1], [0, -1]] }
-  let(:generation_three_after_rule) { [[0,0],[-1,-1],[0,-1]] }
-  let(:test_generation_four)        { [[0, 0], [-1, 1], [1, -1], [0, -2]] }
-  let(:generation_four_after_rule)  { [[0,0],[1,-1]] }
+  let(:test_generation_two)         { [Cell.new(1,0), Cell.new(1,1), Cell.new(-1,-1)] }
+  let(:generation_two_after_rule)   { [Cell.new(0,0)] }
+  let(:test_generation_three)       { [Cell.new(0,0), Cell.new(1,1), Cell.new(-1,-1), Cell.new(0,-1)] }
+  let(:generation_three_after_rule) { [Cell.new(0,0), Cell.new(-1,-1), Cell.new(0,-1)] }
+  let(:test_generation_four)        { [Cell.new(0,0), Cell.new(-1,1), Cell.new(1,-1), Cell.new(0, -2)] }
+  let(:generation_four_after_rule)  { [Cell.new(0,0), Cell.new(1,-1)] }
 
   context 'When none of the cells in the current generation fit the rule' do
     it 'returns an empty array, example 0' do
