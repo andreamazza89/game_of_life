@@ -31,4 +31,3 @@ class RuleTwo
   end
 
 end
-
