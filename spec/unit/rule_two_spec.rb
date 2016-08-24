@@ -4,7 +4,7 @@ describe RuleTwo, ':evaluate_next_generation_cells' do
   let(:rule_two)                    { described_class }
   let(:test_generation_one)         { [Cell.new(0,0), Cell.new(1,0)] }
   let(:generation_one_after_rule)   { [] }
-  let(:test_generation_two)         { [Cell.new(1,0), Cell.new(1,1), Cell.new(-1,-1)] }
+  let(:test_generation_two)         { [Cell.new(0,0), Cell.new(1,1), Cell.new(-1,-1)] }
   let(:generation_two_after_rule)   { [Cell.new(0,0)] }
   let(:test_generation_three)       { [Cell.new(0,0), Cell.new(1,1), Cell.new(-1,-1), Cell.new(0,-1)] }
   let(:generation_three_after_rule) { [Cell.new(0,0), Cell.new(-1,-1), Cell.new(0,-1)] }

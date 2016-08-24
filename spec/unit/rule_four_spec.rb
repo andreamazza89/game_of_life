@@ -25,7 +25,7 @@ describe RuleFour, ':evaluate_next_generation_cells' do
 
   context 'When some of the cells in the current generation fit the rule' do
 
-    it 'returns an array of cells that fit the rule, example 0', focus: true do
+    it 'returns an array of cells that fit the rule, example 0' do
       allow(mock_grid).to receive(:current_generation).and_return(test_generation_two)
       expect(rule_four.evaluate_next_generation_cells(mock_grid)).to eq(generation_two_after_rule)
     end

@@ -11,7 +11,7 @@ class RuleFour
       next_generation << cell.neighbours
     end
 
-    next_generation.flatten(1).uniq.select { |cell| has_three_neighbours?(cell, current_generation) }
+    next_generation.flatten(1).uniq { |cell| cell.coordinates }.select { |cell| has_three_neighbours?(cell, current_generation) }
   end
 
   private
