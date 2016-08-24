@@ -31,10 +31,16 @@ describe 'Integration - grid has some alive cells ' do
       expect(test_grid.tick(rules)).to include(test_cell)
     end
 
-    it '#tick returns an array excluding the cell analysed (example 1)' do
-      test_grid = Grid.new([test_cell, [1,0], [1,1], [1,0]])
+    it '#tick returns an array including the cell analysed (example 1)' do
+      test_grid = Grid.new([test_cell, [1,0], [1,1], [0,1]])
       rules     = [RuleTwo, RuleFour]
       expect(test_grid.tick(rules)).to include(test_cell)
+    end
+
+    it '#tick returns an array excluding the cell analysed (example 0)' do
+      test_grid = Grid.new([test_cell, [1,0], [1,1], [0,1], [-1,-1]])
+      rules     = [RuleTwo, RuleFour]
+      expect(test_grid.tick(rules)).not_to include(test_cell)
     end
 
   end
@@ -45,15 +51,28 @@ describe 'Integration - grid has some alive cells ' do
   context 'Rule 3' do
 
     it '#tick returns an array excluding the cell analysed (example 0)' do
-      test_grid = Grid.new([test_cell, [1,0], [1,1], [1,0], [-1,1]])
+      test_grid = Grid.new([test_cell, [1,0], [1,1], [0,1], [-1,1]])
       rules     = [RuleTwo, RuleFour]
       expect(test_grid.tick(rules)).not_to include(test_cell)
     end
 
     it '#tick returns an array excluding the cell analysed (example 1)' do
-      test_grid = Grid.new([test_cell, [1,0], [1,1], [1,0], [-1,1], [-1, 0], [-1,-1], [-1,0], [-1,1]])
+      test_grid = Grid.new([test_cell, [1,0], [1,1], [0,1], [-1,1], [-1, 0], [-1,-1],])
       rules     = [RuleTwo, RuleFour]
       expect(test_grid.tick(rules)).not_to include(test_cell)
+    end
+
+  end
+
+
+  #Any dead cell with exactly three live neighbours becomes a live cell, 
+  #as if by reproduction.
+  context 'Rule 4' do
+
+    it '#tick returns an array including the cell analysed (example 0)' do
+      test_grid = Grid.new([[1,0], [1,1], [0,1]])
+      rules     = [RuleTwo, RuleFour]
+      expect(test_grid.tick(rules)).to include(test_cell)
     end
 
   end

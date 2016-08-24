@@ -2,7 +2,7 @@ describe RuleTwo, ':evaluate_next_generation_cells' do
 
   let(:mock_grid)                   { instance_double('Grid') }
   let(:rule_two)                    { described_class }
-  let(:test_generation_one)         { [[0,0], [1,0] ] }
+  let(:test_generation_one)         { [[0, 0], [1, 0] ] }
   let(:generation_one_after_rule)   { [] }
   let(:test_generation_two)         { [[0, 0], [1, 1], [-1, -1]] }
   let(:generation_two_after_rule)   { [[0,0]] }
