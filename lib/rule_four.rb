@@ -1,3 +1,6 @@
+#Understands how to update the next generation of alive cells based on rule 4:
+#Any live cell with two or three live neighbours lives on to the next generation.
+
 class RuleFour
 
   def self.evaluate_next_generation_cells(grid)
