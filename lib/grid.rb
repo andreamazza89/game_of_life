@@ -1,5 +1,6 @@
 #Understands how to update the current generation of alive cells based on 
 #the rules provided
+
 class Grid
 
   attr_reader :current_generation

@@ -8,7 +8,7 @@ class RuleTwo
     current_generation.select { |cell| has_two_or_three_neighbours?(cell, current_generation) }
   end
 
-  #private
+  private
 
   def self.has_two_or_three_neighbours?(cell, current_generation)
     cell_neighbours = neighbours(cell)
