@@ -6,6 +6,15 @@ I am going to avoid looking into any existing solutions for my first attempt,
 followed by seeking feedback, then do some research on previous solutions and
 improve my own.
 
+### Terminology
+
+(Notice that the description of grid and cell below is based around a visual
+representation of the data involved)
+
+- Grid      | This is an infinite two-dimensional orthogonal grid of square cells.
+- Cell      | Each cell in the grid is square and can either be dead or alive.
+- Neighbour | A cell has eight neighbours, which are the surrounding cells.
+
 ### Public interface
 
 As an absolute first step I am going to consider the public interface of the
@@ -15,8 +24,8 @@ This consists of two public methods: #initialize and and #tick.
 The latter updates the state of the grid based on the rules and returns it.  
 The former allows a user of the system to create an initial state, i.e. set a
 number of cells to 'alive'. In fact, I believe it is better to assume there is
-no such thing as an alive or dead cell, rather its presence or not, which leads
-me to the infinite grid.
+no such thing as an alive or dead cell, rather the presence or absence of a cell, 
+which leads me to the infinite grid.
 
 ### The grid
 
@@ -49,11 +58,3 @@ figure, we will need to establish a worst case scenario to test against.
 The grid has an origin cell, with coordinates x:0, y:0. The rest of the cells 
 will be referred to in terms of offset in both axes from the origin. Both axes 
 are positively and infinitely infinite.
-
-### Terminology
-
-(Notice that the description of grid and cell below is based around a visual
-representation of the data involved)
-
-- Grid | This is an infinite two-dimensional orthogonal grid of square cells.
-- Cell | Each cell in the grid is square and can either be dead or alive.
