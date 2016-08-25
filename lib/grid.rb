@@ -16,6 +16,6 @@ class Grid
       next_generation << rule.evaluate_next_generation_cells(self)
     end
 
-    @current_generation = next_generation.flatten(1)
+    @current_generation = next_generation.flatten(1).uniq { |cell| cell.coordinates }
   end
 end
