@@ -1,7 +1,7 @@
 describe Grid do
 
-  let(:test_generation_one) { [instance_double('cell one')] }
-  let(:test_generation_two) { [instance_double('cell two')] }
+  let(:test_generation_one) { [instance_double('cell one', coordinates: [0,0])] }
+  let(:test_generation_two) { [instance_double('cell two', coordinates: [1,1])] }
   let(:mock_rule_one)       { class_double('RuleTwo') }
   let(:mock_rule_two)       { class_double('RuleFour') }
 
