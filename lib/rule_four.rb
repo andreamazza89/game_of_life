@@ -1,5 +1,5 @@
 #Understands how to update the next generation of alive cells based on rule 4:
-#Any live cell with two or three live neighbours lives on to the next generation.
+#Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 class RuleFour
 
