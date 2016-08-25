@@ -19,7 +19,7 @@ canvas_size       = ARGV[3].nil? ? 200 : ARGV[3].to_i
 
 canvas   = Drawille::Canvas.new
 flipbook = Drawille::FlipBook.new
-grid     = Grid.new(INITIAL_STATE.flatten(1))
+grid     = Grid.new(INITIAL_STATE)
 
 
 def cartesian_to_raster(cell, canvas_size)
