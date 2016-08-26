@@ -6,4 +6,5 @@ gem 'drawille'
 
 group :test do
   gem "rspec", '3.5'
+  gem "coveralls", require: false
 end

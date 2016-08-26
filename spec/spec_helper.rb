@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require_relative '../lib/grid'
 require_relative '../lib/cell'
 require_relative '../lib/rule_two'
