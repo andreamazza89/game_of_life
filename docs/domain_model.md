@@ -69,6 +69,22 @@ cells might be introduced.
 - If the computation time on each tick is critical and has to be under a certain
 figure, we will need to establish a worst case scenario to test against.
 
+__note__: the issues above remain not addressed in the first iteration of the 
+program. With regards to the limits on how many cells can be stored in memory, a 
+future implementation could include a limiting guard on the initial grid state
+(should the user pass in a grid with all cells alive, then the grid should be 
+limited to such an area as to not have more cells than memory can handle). This 
+would however not guarantee that the limit in memory is not exceeded due to game
+of life not being decidable. 
+
+In terms of efficiency, it seems impossible to be able to calculate a worst case
+scenario when the time taken to process a tick is directly dependent on the 
+number of cells alive and this cannot be calculated for all scenarios due to game
+of life not being decidable.
+
+In light of the above, it might be impossible to have a real-time implementation 
+of game of life.
+
 ### Coordinate system
 
 The grid has an origin cell, with coordinates x:0, y:0. The rest of the cells
