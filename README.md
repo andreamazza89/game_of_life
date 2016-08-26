@@ -1,4 +1,4 @@
-# Game of life
+# Game of life [![Build Status](https://travis-ci.org/andreamazza89/game_of_life.svg?branch=master)](https://travis-ci.org/andreamazza89/game_of_life) [![Coverage Status](https://coveralls.io/repos/github/andreamazza89/game_of_life/badge.svg?branch=master)](https://coveralls.io/github/andreamazza89/game_of_life?branch=master)
 My solution to the famous kata Game of Life, devised by John Horton Conway.
 Follow [this link](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) for a
 description of the game.
