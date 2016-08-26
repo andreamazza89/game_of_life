@@ -17,6 +17,7 @@ the grid is calculated based on the following rules:
 Please see my domain model, including my rationale, [here](https://github.com/andreamazza89/game_of_life/blob/master/docs/domain_model.md).
 
 ### Installation
+- Clone this repo and move into it ```git clone https://github.com/andreamazza89/game_of_life && cd game_of_life```
 - Install the appropriate version of ruby (recommended: [rvm](https://rvm.io/rvm/install)) and [bundler](http://bundler.io/).
 - Run ```bundle install```
 - Check that all tests are passing ```rspec```
