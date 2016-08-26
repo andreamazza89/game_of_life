@@ -35,8 +35,8 @@ An example use of the system can be found in the *visualisation* folder.
 This uses the gem [drawille](https://github.com/asciimoo/drawille) to display an 
 evolving grid on the console.
 
-To use it with the default settings, simply move to the visualisation directory 
-and run ```ruby visualisation/visualiser.rb ./initial_state.rb```
+To use it with the default settings, simply move to the root of the repo and run 
+```ruby visualisation/visualiser.rb ./initial_state.rb```
 
 You can also change settings as follows:  
 ```ruby visualisation/visualiser.rb``` | ```relative_path_from_visualiser_to_initial_state``` | ```total_number_of_frames``` | ```frames_per_second``` | ```window_size``` 
