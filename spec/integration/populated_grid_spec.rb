@@ -1,6 +1,7 @@
 describe 'Integration - grid has some alive cells ' do
 
   let(:test_cell) { Cell.new(0,0) }
+  let(:rules)     { [RuleTwo, RuleFour] }
 
   #Any live cell with two or three live neighbours lives on 
   #to the next generation.
@@ -9,13 +10,11 @@ describe 'Integration - grid has some alive cells ' do
 
       it 'Grid#tick returns an array including the cell analysed (example 0)' do
         test_grid = Grid.new([test_cell, Cell.new(1,0), Cell.new(1,1)])
-        rules     = [RuleTwo, RuleFour]
         expect(test_grid.tick(rules)).to include(test_cell)
       end
 
       it 'Grid#tick returns an array including the cell analysed (example 1)' do
         test_grid = Grid.new([test_cell, Cell.new(1,0), Cell.new(1,1), Cell.new(0,1)])
-        rules     = [RuleTwo, RuleFour]
         expect(test_grid.tick(rules)).to include(test_cell)
       end
 
@@ -25,7 +24,6 @@ describe 'Integration - grid has some alive cells ' do
 
       it 'Grid#tick returns an array excluding the cell analysed (example 0)' do
         test_grid = Grid.new([test_cell, Cell.new(1,0), Cell.new(1,1), Cell.new(0,1), Cell.new(-1,-1)])
-        rules     = [RuleTwo, RuleFour]
         expect(test_grid.tick(rules)).not_to include(test_cell)
       end
 
@@ -39,7 +37,6 @@ describe 'Integration - grid has some alive cells ' do
 
     it 'Grid#tick returns an array including the cell analysed (example 0)' do
       test_grid = Grid.new([Cell.new(1,0), Cell.new(1,1), Cell.new(0,1)])
-      rules     = [RuleTwo, RuleFour]
       expect(test_grid.tick(rules)).to include(test_cell)
     end
 

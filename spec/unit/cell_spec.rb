@@ -29,6 +29,7 @@ describe Cell do
 
 
   describe '#has_n_neighbours' do
+
     context 'when the input of #has_n_neighbours matches the n of neighbours' do
       it 'returns true' do
         expect(test_cell.has_n_neighbours?(1, test_current_generation)).to eq(true)
@@ -40,6 +41,7 @@ describe Cell do
         expect(test_cell.has_n_neighbours?(2, test_current_generation)).to eq(false)
       end
     end
+
   end
 
 
