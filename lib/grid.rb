@@ -3,19 +3,19 @@
 
 class Grid
 
-  attr_reader :current_generation
+  attr_reader :current_generation, :next_generation
   
   def initialize(alive_cells)
     @current_generation = alive_cells
   end
 
   def tick(rules)
-    next_generation = []
+    @next_generation = []
 
     rules.each do |rule|
-      next_generation << rule.evaluate_next_generation_cells(self)
+      @next_generation << rule.evaluate_next_generation_cells(self)
     end
 
-    @current_generation = next_generation.flatten(1).uniq { |cell| cell.coordinates }
+    @current_generation = @next_generation.flatten
   end
 end

@@ -1,7 +1,7 @@
 describe RuleFour, ':evaluate_next_generation_cells' do
 
   let(:rule_four)                   { described_class }
-  let(:mock_grid)                   { instance_double('Grid') }
+  let(:mock_grid)                   { instance_double('Grid', next_generation: []) }
 
   let(:mock_cell)                   { instance_double('Cell') }
   let(:mock_cell_fits_rule)         { instance_double('Cell', has_n_neighbours?: true) }
