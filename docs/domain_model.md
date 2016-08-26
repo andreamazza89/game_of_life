@@ -92,16 +92,14 @@ assumption that no cells survive, these two rules are irrelevant.
 As mentioned, Rules one and three become insignificant as we are starting from 
 the assumption that no cells survive the next generation and these rules describe which cells do not survive.
 
-###### Rule 2: Any live cell with two or three live neighbours lives on to the 
-next generation.
+###### Rule 2: Any live cell with two or three live neighbours lives on to the next generation.
 
 This rule simply looks at all live cells and selects any that have 2 or 3 
 neighbours. In addition, before filtering, the rule removes any cells that are 
 already included in ```Grid@next_generation``` to avoid marking the same cell as 
 alive by more than one rule.
 
-###### Rule 4: Any dead cell with exactly three live neighbours becomes a live 
-cell, as if by reproduction.
+###### Rule 4: Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 This rule is based on the following assumption: any dead cell that might come 
 alive in the next generation must be a neighbour of a cell that is alive in 
