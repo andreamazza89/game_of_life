@@ -6,7 +6,7 @@ description of the game.
 ### Rules
 The game consists of an infinite orthogonal grid, full of square cells. These 
 can either be dead or alive. At each step in time, called a *tick*, the state of 
-the grid is calculated based on the following rules:
+the grid is calculated based on the following rules: 
 
 1. Any live cell with fewer than two live neighbours dies, as if caused by under-population.
 2. Any live cell with two or three live neighbours lives on to the next generation.
