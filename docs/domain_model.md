@@ -3,8 +3,8 @@
 General note: this is a popular kata, and as such I imagine a number of solutions
 must be available online.
 I am going to avoid looking into any existing solutions for my first attempt,
-followed by seeking feedback, then do some research on previous solutions and
-improve my own.
+followed by seeking feedback, then research on previous solutions and improve my 
+own.
 
 ![diagram](https://github.com/andreamazza89/game_of_life/blob/master/docs/Drawing.jpeg)
 
@@ -57,7 +57,7 @@ that is anywhere else. I am going to choose to store the coordinates of alive
 cells for the following reason:
 
 - The grid is initialised with a finite list of cells that are alive. It follows
-that at the beginning the list of alive cells if finite, whereas the list of dead
+that at the beginning the list of alive cells is finite, whereas the list of dead
 ones is infinite.
 
 A few challenges posed by the infinite grid:
@@ -82,8 +82,8 @@ scenario when the time taken to process a tick is directly dependent on the
 number of cells alive and this cannot be calculated for all scenarios due to game
 of life not being decidable.
 
-In light of the above, it might be impossible to have a real-time implementation 
-of game of life.
+In light of the above, it might be impossible to have a guaranteed real-time 
+implementation of game of life.
 
 ### Coordinate system
 
@@ -122,5 +122,5 @@ alive in the next generation must be a neighbour of a cell that is alive in
 the current generation.
 With this in mind, this rule first puts all neighbours of the 
 ```Grid@current_generation``` in an array named ```potential_new_cells```, then 
-removes and duplicates and cells already existing in ```Grid@next_generation``` 
+removes any duplicates and cells already existing in ```Grid@next_generation``` 
 as per rule two, finally it selects any cells that have exactly three neighbours.
